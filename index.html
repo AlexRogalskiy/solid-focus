@@ -46,4 +46,54 @@
       0% { transform: scale(.7); opacity: .3; }
       50% { transform: scale(1); opacity: 1; }
       100% { transform: scale(.7); opacity: .3; }
-    }</style><link href=/solid-focus/js/chunk-228c3714.6f3e5267.js rel=prefetch><link href=/solid-focus/js/chunk-2d0b3e1d.87116961.js rel=prefetch><link href=/solid-focus/js/chunk-2d0c7a58.e8dabac1.js rel=prefetch><link href=/solid-focus/js/chunk-2d0db283.c2cd132a.js rel=prefetch><link href=/solid-focus/js/chunk-2d0df226.d6a8824a.js rel=prefetch><link href=/solid-focus/js/chunk-795096ba.505a5bdc.js rel=prefetch><link href=/solid-focus/css/app.e1fab5ba.css rel=preload as=style><link href=/solid-focus/css/chunk-vendors.1cd5d9ed.css rel=preload as=style><link href=/solid-focus/js/app.7d8f78ce.js rel=preload as=script><link href=/solid-focus/js/chunk-vendors.9ca30d13.js rel=preload as=script><link href=/solid-focus/css/chunk-vendors.1cd5d9ed.css rel=stylesheet><link href=/solid-focus/css/app.e1fab5ba.css rel=stylesheet><link rel=icon type=image/png sizes=32x32 href=/solid-focus/img/icons/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/solid-focus/img/icons/favicon-16x16.png><link rel=manifest href=/solid-focus/manifest.json><meta name=theme-color content=#4dba87><meta name=apple-mobile-web-app-capable content=no><meta name=apple-mobile-web-app-status-bar-style content=default><meta name=apple-mobile-web-app-title content="Solid Focus"><link rel=apple-touch-icon href=/solid-focus/img/icons/apple-touch-icon-152x152.png><link rel=mask-icon href=/solid-focus/img/icons/safari-pinned-tab.svg color=#4dba87><meta name=msapplication-TileImage content=/solid-focus/img/icons/msapplication-icon-144x144.png><meta name=msapplication-TileColor content=#4dba87></head><body loading><noscript><strong>We're sorry but Focus doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id=app><svg width=60 height=15 viewBox="0 0 120 30" class=fill-current><circle cx=15 cy=15 r=15></circle><circle cx=60 cy=15 r=15></circle><circle cx=105 cy=15 r=15></circle></svg></div><script src=/solid-focus/js/chunk-vendors.9ca30d13.js></script><script src=/solid-focus/js/app.7d8f78ce.js></script></body></html>
+    }
+
+    #wip-alert {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        background: #333;
+        color: white;
+        padding: 1rem;
+        z-index: 1000;
+        display: flex;
+        font-family: "Roboto", sans-serif;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+    }
+
+    #wip-alert button {
+        background: #00a86b;
+        padding: .25rem .5rem;
+        margin-left: .25rem;
+    }
+
+    #wip-alert button:hover {
+        opacity: .9;
+    }
+
+    @media (max-width:960px) {
+        #wip-alert {
+            flex-direction: column;
+        }
+
+        #wip-alert span {
+            margin-bottom: 1rem;
+        }
+    }</style><link href=/solid-focus/js/chunk-228c3714.6f3e5267.js rel=prefetch><link href=/solid-focus/js/chunk-2d0b3e1d.87116961.js rel=prefetch><link href=/solid-focus/js/chunk-2d0c7a58.e8dabac1.js rel=prefetch><link href=/solid-focus/js/chunk-2d0db283.c2cd132a.js rel=prefetch><link href=/solid-focus/js/chunk-2d0df226.d6a8824a.js rel=prefetch><link href=/solid-focus/js/chunk-795096ba.505a5bdc.js rel=prefetch><link href=/solid-focus/css/app.e1fab5ba.css rel=preload as=style><link href=/solid-focus/css/chunk-vendors.1cd5d9ed.css rel=preload as=style><link href=/solid-focus/js/app.7d8f78ce.js rel=preload as=script><link href=/solid-focus/js/chunk-vendors.9ca30d13.js rel=preload as=script><link href=/solid-focus/css/chunk-vendors.1cd5d9ed.css rel=stylesheet><link href=/solid-focus/css/app.e1fab5ba.css rel=stylesheet><link rel=icon type=image/png sizes=32x32 href=/solid-focus/img/icons/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/solid-focus/img/icons/favicon-16x16.png><link rel=manifest href=/solid-focus/manifest.json><meta name=theme-color content=#4dba87><meta name=apple-mobile-web-app-capable content=no><meta name=apple-mobile-web-app-status-bar-style content=default><meta name=apple-mobile-web-app-title content="Solid Focus"><link rel=apple-touch-icon href=/solid-focus/img/icons/apple-touch-icon-152x152.png><link rel=mask-icon href=/solid-focus/img/icons/safari-pinned-tab.svg color=#4dba87><meta name=msapplication-TileImage content=/solid-focus/img/icons/msapplication-icon-144x144.png><meta name=msapplication-TileColor content=#4dba87></head><body loading><aside id=wip-alert style="display: none"><span>This app hasn't been updated for a while, so it may not work with some new PODs.</span><div><a href=https://github.com/NoelDeMartin/solid-focus/issues/10 target=_blank>Read more about the current status</a> <button onclick=dismissWIPAlert()>OK</button></div></aside><script>var wipAlert = document.getElementById('wip-alert');
+
+        function dismissWIPAlert() {
+            wipAlert.remove();
+            localStorage.setItem('wip-alert-dismissed', 'true');
+        }
+
+        function initWIPAlert() {
+            if (!!localStorage.getItem('wip-alert-dismissed'))
+                return;
+
+            wipAlert.style.display = 'flex';
+        }
+
+        initWIPAlert();</script><noscript><strong>We're sorry but Focus doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id=app><svg width=60 height=15 viewBox="0 0 120 30" class=fill-current><circle cx=15 cy=15 r=15></circle><circle cx=60 cy=15 r=15></circle><circle cx=105 cy=15 r=15></circle></svg></div><script src=/solid-focus/js/chunk-vendors.9ca30d13.js></script><script src=/solid-focus/js/app.7d8f78ce.js></script></body></html>
